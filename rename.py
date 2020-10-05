@@ -31,14 +31,15 @@ def replace_and_sort(remove):
             file_name, file_ex = os.path.splitext(file)
             file_name = file_name.replace(remove, '')
             if name in file_name:
-                os.rename(file, f"{new_name}.mp4")
+                # os.rename(file, f"{new_name}.mp4")
+                os.rename(file, f"{name}.mp4")
                 # print(file, f"\n{new_name}.mp4")
                 # print()
     return sorted_dict
 
 
-folder = change_working_directory(r"E:\Information Technology\Git\ITPro.TV")
-dictionary = replace_and_sort('- Intro to Git - Intro to Git')
+folder = change_working_directory(r"D:\Studies\Information Technology\Cisco\Cisco CCNP ENARSI 300-410\ITPro.TV\1. Layer 3 Technologies")
+dictionary = replace_and_sort('- Layer 3 Technologies - Cisco CCNP Enterprise ENARSI (Exam 300-410) (In Production)')
 
 # print(folder)
 # print(json.dumps(dictionary, indent=2))
