@@ -1,8 +1,2 @@
-import base64
-
-location = r'C:\Users\ibili\Downloads\s1.txt'
-file_string = open(location, 'r').read()
-
-file_encode = file_string.encode('base64')
-
-
+sh = "name1=laura; param=\"name=$name1\"; echo $param > /tmp/paramfile; cat /tmp/paramfile"
+print(sh)
