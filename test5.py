@@ -1,14 +1,12 @@
-from flask import Flask, jsonify, request
 import requests
 
+url = "http://35.223.71.184/api/org"
 
-app = Flask(__name__)
+payload="{\r\n    \"siteName\": \"Lon\",\r\n    \"email\": \"ibili3@gmail.com\",\r\n    \"orgName\": \"Afenia5\",\r\n    \"password\": \"cisco12345\"\r\n}"
+headers = {
+  'Content-Type': 'application/json'
+}
 
-@app.route('/api/config/', methods=['POST'])
-def post_config():
-        content = request.get_json()
-        print(content)
-        return content
+response = requests.request("POST", url, headers=headers, data=payload)
 
-if __name__ == '__main__':
-        app.run(host='0.0.0.0')
+print(response.text)
